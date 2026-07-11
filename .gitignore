@@ -1,3 +1,6 @@
 research/tmp/
 *.log
 .DS_Store
+
+# 分析ツールが落とした公開データのキャッシュ
+tools/.cache/
