@@ -164,9 +164,9 @@ def main() -> int:
     for t in tests:
         try:
             t()
-        except AssertionError as e:
+        except Exception as e:  # AssertionError 以外で落ちても残りを走らせる
             failed += 1
-            print(f"FAIL {t.__name__}: {e}")
+            print(f"FAIL {t.__name__}: {type(e).__name__}: {e}")
     print(f"{len(tests) - failed}/{len(tests)} passed")
     return 1 if failed else 0
 
